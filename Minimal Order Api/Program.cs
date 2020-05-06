@@ -68,7 +68,7 @@ namespace Minimal_Order_Api
                     Console.WriteLine($"Order {uniqueIdentifier}: Missing {nameof(order.OrderNumber)}");
                 }
 
-                if (order.CreatedAt > startDate)
+                if (order.CreatedAt == default)
                 {
                     isValid = false;
                     Console.WriteLine($"Order {uniqueIdentifier}: {nameof(order.CreatedAt)} was not set.");
