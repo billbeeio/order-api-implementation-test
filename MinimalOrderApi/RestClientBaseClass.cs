@@ -14,7 +14,7 @@ using RestSharp;
 using RestSharp.Deserializers;
 using RestSharp.Serializers;
 
-namespace Minimal_Order_Api
+namespace Billbee.MinimalOrderApi
 {
       public delegate string PreProcessString(string xml);
 
@@ -302,7 +302,6 @@ namespace Minimal_Order_Api
 
         protected virtual string parseError(RestSharp.IRestResponse response)
         {
-            // Default handling. Works for inventorum, Debitoor and some other
             string errMsg = null;
             try
             {

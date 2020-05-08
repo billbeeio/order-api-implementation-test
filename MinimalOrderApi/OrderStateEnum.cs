@@ -1,4 +1,4 @@
-namespace Minimal_Order_Api
+namespace Billbee.MinimalOrderApi
 {
     public enum OrderStateEnum
     {

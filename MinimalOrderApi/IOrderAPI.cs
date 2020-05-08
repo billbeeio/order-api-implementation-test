@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 
-namespace Minimal_Order_Api
+namespace Billbee.MinimalOrderApi
 {
     public interface IOrderAPI : IDisposable
     {
         IEnumerable<Order> GetOrderList(DateTime? startDate,
-                                           decimal vatRateRegular,
-                                           decimal vatRateReduced,
-                                           out int totalNumberOfOrders,
-                                           out int totalNumberOfPages,
-                                           int page = 1,
-                                           int pageSize = 50
+                                        decimal vatRateRegular,
+                                        decimal vatRateReduced,
+                                        out int totalNumberOfOrders,
+                                        out int totalNumberOfPages,
+                                        int page = 1,
+                                        int pageSize = 50
         );
 
         /// <summary>Deserialize the stored access token.</summary>

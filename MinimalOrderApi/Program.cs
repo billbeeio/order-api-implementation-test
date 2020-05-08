@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Minimal_Order_Api
+namespace Billbee.MinimalOrderApi
 {
     internal class Program
     {
@@ -48,6 +48,11 @@ namespace Minimal_Order_Api
                         throw;
                     }
                 } while (++currentPage <= numberOfPages);
+
+                if (api.SerializeAccessToken() != accessToken)
+                {
+                    Console.WriteLine("The access token was modified.");
+                }
             }
 
             Console.WriteLine($"Loaded {orders.Count} order(s).");
