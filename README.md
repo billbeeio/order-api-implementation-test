@@ -3,7 +3,7 @@ It contains important information about the task itself and how to submit your s
 
 ## Task overview
 
-Create a implementation of the [IOrderAPI](./MinimalOrderApi/IOrderAPI.cs).
+Create na implementation of the [IOrderAPI](./MinimalOrderApi/IOrderAPI.cs).
 
 Priorities:
 - The Implementation can be used with any access token (no hardcoded strings etc.)
@@ -11,13 +11,13 @@ Priorities:
 - Calculated prices are correct
 - Tax is correct calculated
 - Discounts (per position) should set to the `OrderItem.Discount` property.
-- The calculated total of the order must equal the `Order.TotalCost` (gross) which comes from the external system.
+- The calculated total of the order must be equal to the `Order.TotalCost` (gross) which comes from the external system.
 
 ### `IOrderAPI.GetOrderList`
 This method is used for querying a list of orders which are created or modified after the the `startDate`.
 `vatRateRegular` and `vatRateReduced` are the default vat rates of the client. You can use this for calculating the tax amount
 if the API doesn't provide this information.
-You also need those to specify the `Order.TaxRateRegular`, `Order.TaxRateReduced` and `OrderItem.TaxIndex`.
+you also need those to specify `Order.TaxRateRegular`, `Order.TaxRateReduced` and `OrderItem.TaxIndex`.
 
 Possible values for the tax index:
 - 0 = No vat applicable
@@ -30,7 +30,7 @@ Possible values for the tax index:
 `IOrderAPI.DeserializeAccessToken` is called by the client before `IOrderAPI.GetOrderList`. 
 Use this to setup your implementation for any api related authorization.
 
-`IOrderAPI.SerializeAccessToken` is called by the client for storing the access token in a persistent storage.
+`IOrderAPI.SerializeAccessToken` is called by the client to retrieve the current access token. Return a new token if the access token can expire.
 
 ## How to start
 1. Download the source of this repository
