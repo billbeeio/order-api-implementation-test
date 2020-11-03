@@ -3,7 +3,7 @@ It contains important information about the task itself and how to submit your s
 
 ## Task overview
 
-Create na implementation of the [IOrderAPI](./MinimalOrderApi/IOrderAPI.cs).
+Create an implementation of the [IOrderAPI](./MinimalOrderApi/IOrderAPI.cs) to import orders from the [Shopify ReST API](https://shopify.dev/docs/admin-api/rest/).
 
 Priorities:
 - The Implementation can be used with any access token (no hardcoded strings etc.)
@@ -12,6 +12,8 @@ Priorities:
 - Tax is correct calculated
 - Discounts (per position) should set to the `OrderItem.Discount` property.
 - The calculated total of the order must be equal to the `Order.TotalCost` (gross) which comes from the external system.
+- Don't add any NuGet Packages
+- Use the [MinimalOrderApi/RestClientBaseClass.cs](MinimalOrderApi/RestClientBaseClass.cs) to consume the ReST API
 
 ### `IOrderAPI.GetOrderList`
 This method is used for querying a list of orders which are created or modified after the the `startDate`.
@@ -50,7 +52,7 @@ Use this to setup your implementation for any api related authorization.
 5. Run the console application to test your implementation.
 
 ### HTTP Interaction
-To interact with a HTTP service, your implementation can derive from the [RestClientBaseClass](./MinimalOrderApi/RestClientBaseClass.cs).
+To interact with a HTTP service, your implementation should derive from the [RestClientBaseClass](./MinimalOrderApi/RestClientBaseClass.cs).
 
 ## Submit your solution
 1. Commit your changes using `git commit`
